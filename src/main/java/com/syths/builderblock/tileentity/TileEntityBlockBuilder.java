@@ -146,9 +146,8 @@ public class TileEntityBlockBuilder extends TileEntity implements ITickable, IIn
 
 	@Override
 	public ItemStack getStackInSlot(int index) {
-		ItemStack stack = new ItemStack(Items.STICK, 64);
-//		return itemStacks[index];
-		return stack;
+//		ItemStack stack = new ItemStack(Items.STICK, 64);
+		return itemStacks[index - 36];
 	}
 
 	@Override
@@ -183,7 +182,7 @@ public class TileEntityBlockBuilder extends TileEntity implements ITickable, IIn
 
 	@Override
 	public void setInventorySlotContents(int index, ItemStack stack) {
-		itemStacks[index] = stack;
+		itemStacks[index - 36] = stack;
 		
 		if (stack != null && stack.stackSize > getInventoryStackLimit()) {
 			stack.stackSize = getInventoryStackLimit();

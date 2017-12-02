@@ -101,7 +101,7 @@ public class ContainerBlockBuilder extends Container {
 		// Check if the sourceStack is in a vanilla container slot (player inventory)
 		if (sourceSlotIndex >= VANILLA_FIRST_SLOT_INDEX && sourceSlotIndex < VANILLA_FIRST_SLOT_INDEX + VANILLA_SLOT_COUNT) {
 			// This is a vanilla slot so move --> Tile Entity
-			if (TileEntityBlockBuilder.getSmeltingResultForItem(sourceStack) != null) {
+//			if (TileEntityBlockBuilder.getSmeltingResultForItem(sourceStack) != null) {
 				if(!mergeItemStack(sourceStack, FIRST_FUEL_SLOT_INDEX, FIRST_FUEL_SLOT_INDEX + FUEL_SLOTS_COUNT, false)) {
 					return null;
 				} else if (TileEntityBlockBuilder.getItemBurnTime(sourceStack) > 0) {
@@ -111,7 +111,7 @@ public class ContainerBlockBuilder extends Container {
 					
 				} else {
 					return null;
-				}
+//				}
 			}
 		} else if (sourceSlotIndex >= FIRST_FUEL_SLOT_INDEX && sourceSlotIndex < FIRST_FUEL_SLOT_INDEX + BLOCKBUILDER_SLOTS_COUNT) {
 			// This is a slot from our Tile Entity so merge the itemstack --> player inventory
@@ -131,7 +131,7 @@ public class ContainerBlockBuilder extends Container {
 		}
 		
 		sourceSlot.onPickupFromSlot(playerIn, sourceStack);
-		return copyOfSourceStack;
+		return sourceStack;
 	}
 
 	
