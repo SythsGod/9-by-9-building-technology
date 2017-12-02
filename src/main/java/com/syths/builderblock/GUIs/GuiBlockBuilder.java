@@ -73,7 +73,7 @@ public class GuiBlockBuilder extends GuiContainer {
 		final int LABEL_XPOS = 5;
 		final int LABEL_YPOS = 5;
 		
-//		fontRendererObj.drawString(tileEntity.getDisplayName().getUnformattedText(), LABEL_XPOS, LABEL_YPOS, Color.DARK_GRAY.getRGB());
+		fontRendererObj.drawString(tileEntity.getDisplayName().getUnformattedText(), LABEL_XPOS, LABEL_YPOS, Color.DARK_GRAY.getRGB());
 		
 		List<String> hoveringText = new ArrayList<String>();
 		
